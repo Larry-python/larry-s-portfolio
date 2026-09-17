@@ -1,0 +1,166 @@
+/* =========================
+   PROJECTS PAGE
+========================= */
+
+.projects-page {
+    min-height: 80vh;
+    padding: 100px 8%;
+    background: #f8faff;
+}
+
+.projects-page .section-heading {
+    max-width: 750px;
+    margin: 0 auto 60px;
+    text-align: center;
+}
+
+.projects-page .section-heading p {
+    margin-bottom: 10px;
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.projects-page .section-heading h1 {
+    margin-bottom: 15px;
+    font-size: 42px;
+}
+
+.projects-page .section-heading span {
+    display: block;
+    line-height: 1.7;
+}
+
+/* Project grid */
+
+.projects-page .projects-container {
+    max-width: 1150px;
+    margin: 0 auto;
+
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+}
+
+/* Project card */
+
+.projects-page .project-card {
+    overflow: hidden;
+    background: white;
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+.projects-page .project-card:hover {
+    transform: translateY(-8px);
+
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.12);
+}
+
+/* Project image */
+
+.projects-page .project-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.projects-page .project-image img {
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    transition: transform 0.5s ease;
+}
+
+.projects-page .project-card:hover .project-image img {
+    transform: scale(1.06);
+}
+
+/* Project content */
+
+.projects-page .project-content {
+    padding: 30px;
+}
+
+.projects-page .project-content h2 {
+    margin-bottom: 12px;
+    font-size: 24px;
+}
+
+.projects-page .project-content p {
+    margin-bottom: 25px;
+    line-height: 1.7;
+    font-size: 15px;
+}
+
+/* Buttons */
+
+.projects-page .project-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.projects-page .project-buttons .btn {
+    display: inline-block;
+}
+
+/* Empty state */
+
+.projects-page .empty-message {
+    grid-column: 1 / -1;
+    text-align: center;
+    padding: 50px;
+}
+
+/* =========================
+   PROJECTS RESPONSIVE
+========================= */
+
+@media (max-width: 800px) {
+
+    .projects-page {
+        padding: 80px 5%;
+    }
+
+    .projects-page .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+@media (max-width: 500px) {
+
+    .projects-page {
+        padding: 60px 5%;
+    }
+
+    .projects-page .section-heading h1 {
+        font-size: 32px;
+    }
+
+    .projects-page .project-image {
+        height: 210px;
+    }
+
+    .projects-page .project-content {
+        padding: 25px;
+    }
+
+    .projects-page .project-buttons {
+        flex-direction: column;
+    }
+
+    .projects-page .project-buttons .btn {
+        width: 100%;
+        text-align: center;
+    }
+
+}

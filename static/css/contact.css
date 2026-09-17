@@ -1,0 +1,192 @@
+/* ========================================
+CONTACT PAGE
+======================================== */
+
+.contact-page {
+min-height: 80vh;
+padding: 100px 8%;
+background: #f8faff;
+}
+
+/* CONTACT HEADING */
+
+.contact-heading {
+max-width: 700px;
+margin: 0 auto 60px;
+text-align: center;
+}
+
+.contact-heading > p:first-child {
+color: #2563eb;
+font-size: 17px;
+font-weight: 700;
+margin-bottom: 10px;
+}
+
+.contact-heading h1 {
+font-size: 48px;
+color: #172554;
+margin-bottom: 18px;
+}
+
+.contact-heading p:last-child {
+color: #64748b;
+font-size: 17px;
+line-height: 1.8;
+}
+
+/* ========================================
+CONTACT CARDS
+======================================== */
+
+.contact-container {
+    max-width: 1050px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+}
+
+.contact-card {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 28px;
+
+    background: #ffffff;
+
+    border: 1px solid #e5e7eb;
+
+    border-radius: 18px;
+
+    text-decoration: none;
+    color: #172554;
+
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.05);
+
+    transition: all 0.3s ease;
+
+}
+
+.contact-card:hover {
+    transform: translateY(-7px);
+
+    border-color: #2563eb;
+
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.10);
+}
+
+/* ========================================
+CONTACT ICON
+======================================== */
+
+.contact-icon {
+    width: 65px;
+    height: 65px;
+    flex-shrink: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #eff6ff;
+
+    border-radius: 16px;
+
+    font-size: 30px;
+
+    transition: 0.3s ease;
+
+
+}
+
+.contact-card:hover .contact-icon {
+    background: #2563eb;
+    transform: scale(1.05);
+
+}
+
+/* ========================================
+CONTACT TEXT
+======================================== */
+
+.contact-card h3 {
+    margin: 0 0 6px;
+
+    font-size: 20px;
+
+    color: #172554;
+
+}
+
+.contact-card p {
+    margin: 0;
+
+    color: #64748b;
+
+    font-size: 14px;
+
+}
+
+/* ========================================
+RESPONSIVE TABLET
+======================================== */
+
+@media (max-width: 768px) {
+
+.contact-page {
+    padding: 80px 6%;
+}
+
+.contact-heading h1 {
+    font-size: 38px;
+}
+
+.contact-heading p:last-child {
+    font-size: 16px;
+}
+
+.contact-container {
+    grid-template-columns: 1fr;
+}
+
+}
+
+/* ========================================
+RESPONSIVE MOBILE
+======================================== */
+
+@media (max-width: 480px) {
+
+.contact-page {
+    padding: 65px 5%;
+}
+
+.contact-heading {
+    margin-bottom: 40px;
+}
+
+.contact-heading h1 {
+    font-size: 32px;
+}
+
+.contact-card {
+    padding: 20px;
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 55px;
+    height: 55px;
+
+    font-size: 24px;
+}
+
+.contact-card h3 {
+    font-size: 18px;
+}
+
+.contact-card p {
+    font-size: 13px;
+}
+}

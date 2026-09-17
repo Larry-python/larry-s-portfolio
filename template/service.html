@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Larry's Hub | Services{% endblock %}
+
+{% block content %}
+
+<section class="services-page">
+
+    <div class="section-heading">
+        <p>What I Can Do For You</p>
+        <h1>My Services</h1>
+        <span>
+            I provide modern digital solutions designed to help individuals
+            and businesses build a strong online presence.
+        </span>
+    </div>
+
+    <div class="services-container">
+
+        {% for service in services %}
+
+            <div class="service-card">
+
+                {% if service.icon %}
+                    <div class="service-icon">
+                        <img src="{{ service.icon.url }}" alt="{{ service.title }}">
+                    </div>
+                {% else %}
+                    <div class="service-icon">
+                        💻
+                    </div>
+                {% endif %}
+
+                <h2>{{ service.title }}</h2>
+
+                <p>
+                    {{ service.description }}
+                </p>
+
+            </div>
+
+        {% empty %}
+
+            <p>No services have been added yet.</p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

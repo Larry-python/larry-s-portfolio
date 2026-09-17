@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %} larry`s portfolio {% endblock%}</title>
+    <link rel="stylesheet" href="{% static 'css/navbar.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+    <link rel="stylesheet" href="{% static 'css/about.css' %}">
+    <link rel="stylesheet" href="{% static 'css/contact.css' %}">
+    <link rel="stylesheet" href="{% static 'css/service.css' %}">
+    <link rel="stylesheet" href="{% static 'css/testimonial.css' %}">
+    <link rel="stylesheet" href="{% static 'css/leave_testimonial.css' %}">
+    <link rel="stylesheet" href="{% static 'css/projects.css' %}">
+    <link rel="stylesheet" href="{% static 'css/successtestimonyy.css' %}">
+
+</head>
+<body>
+    {% include 'navbar.html '%}
+    <main>
+        {% block content %}
+        {% endblock %}
+    </main>
+    {% include 'footer.html' %}
+    <script src="{% static 'js/scripts.js'%}"></script>
+</body>
+</html>

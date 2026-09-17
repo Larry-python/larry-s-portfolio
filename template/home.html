@@ -1,0 +1,204 @@
+{% extends 'base.html' %}
+
+{% block title %}Larry's Hub | Home{% endblock %}
+
+{% block content %}
+
+    <!-- HERO SECTION -->
+    {% for profiles in profile %}
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <p class="hero-greeting">Hello, I'm</p>
+
+            {% if profile %}
+                <h1>{{ profiles.full_name }}</h1>
+
+                <h2>{{ profiles.title }}</h2>
+
+                <p class="hero-description">
+                    {{ profiles.bio }}
+                </p>
+            {% else %}
+                <h1>Larry</h1>
+                <h2>Python Developer</h2>
+
+                <p class="hero-description">
+                    I build modern, responsive and user-friendly web applications.
+                </p>
+            {% endif %}
+
+            <div class="hero-buttons">
+                <a href="#projects" class="btn">View Projects</a>
+                <a href="#contact" class="btn secondary-btn">Hire Me</a>
+            </div>
+
+        </div>
+
+        <!-- PROFILE IMAGE -->
+        <div class="hero-image">
+            
+            {% if profile and profiles.profile_image %}
+            <img src="{{ profiles.profile_image.url }}" alt="{{ profile_image }}">
+            {% endif %}
+        </div>
+        {% endfor %}
+
+    </section>
+
+
+    <!-- ABOUT PREVIEW -->
+    <section class="about-preview" id="about">
+
+        <div class="section-heading">
+            <p>Get To Know Me</p>
+            <h2>About Me</h2>
+        </div>
+
+        {% if profile %}
+            <p>
+                {{ profiles.short_bio }}
+            </p>
+        {% else %}
+            <p>
+                I'm an aspiring software engineer and Python developer
+                passionate about creating useful digital solutions.
+            </p>
+        {% endif %}
+
+        <a href="about" class="btn"> 
+            Read More
+        </a>
+
+    </section>
+
+    <!-- TECHNOLOGY & SKILLS SECTION -->
+    <section class="skills-section" id="skills">
+
+        <div class="section-heading">
+            <p>Technologies I Work With</p>
+            <h2>Technology & Skills</h2>
+            <span>
+                Tools and technologies I use to build modern web applications.
+            </span>
+        </div>
+
+        <div class="skills-container">
+
+            {% for skills in skill %}
+
+                <div class="skill-card">
+
+                    {% if skill.icon %}
+                        <div class="skill-icon">
+                            <img src="{{ skills.icon.url }}" alt="{{ skills.name }}">
+                        </div>
+                    {% endif %}
+
+                    <div class="skill-info">
+
+                        <div class="skill-title">
+                            <h3>{{ skills.name }}</h3>
+                            <span>{{ skills.percentage }}%</span>
+                        </div>
+
+                        <div class="skill-bar">
+                            <div
+                                class="skill-progress"
+                                
+                            </div>
+                        </div>
+
+                    </div>
+
+                </div>
+
+            {% empty %}
+
+                <p class="empty-message">
+                    No technologies have been added yet.
+                </p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- PROJECTS SECTION -->
+    <section class="projects-section" id="projects">
+
+        <div class="section-heading">
+            <p>My Recent Work</p>
+            <h2>My Projects</h2>
+        </div>
+
+        <div class="projects-container">
+
+            {% for projects in project %}
+
+                <article class="project-card">
+
+                    {% if projects.image %}
+                        <img
+                            src="{{ projects.image.url }}"
+                            alt="{{ projects.title }}"
+                        >
+                    {% endif %}
+
+                    <div class="project-content">
+
+                        <h3>{{ projects.title }}</h3>
+
+                        {% if projects.preview %}
+                            <p>{{ projects.preview }}</p>
+                        {% endif %}
+
+                        {% if project.link %}
+                            <a
+                                href="{{ project.link }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn"
+                            >
+                                View Project
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </article>
+
+            {% empty %}
+
+                <p>No projects have been added yet.</p>
+
+            {% endfor %}
+
+        </div>
+
+    </section>
+
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" id="contact">
+
+        <div class="section-heading">
+            <p>Let's Work Together</p>
+            <h2>Get In Touch</h2>
+        </div>
+
+        <p>
+            Have a project in mind or want to work together?
+            Feel free to contact me.
+        </p>
+
+        <a href="#" class="btn">
+            Contact Me
+        </a>
+
+    </section>
+{% endblock %}
+

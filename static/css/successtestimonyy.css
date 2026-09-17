@@ -1,0 +1,110 @@
+/* =========================
+   TESTIMONIAL SUCCESS PAGE
+========================= */
+
+.testimonial-success {
+    min-height: 80vh;
+    padding: 80px 5%;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background: #f8faff;
+}
+
+.success-card {
+    width: 100%;
+    max-width: 600px;
+
+    padding: 55px 45px;
+
+    text-align: center;
+
+    background: #ffffff;
+    border-radius: 24px;
+
+    box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
+}
+
+/* Success check */
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+
+    margin: 0 auto 25px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #eef3ff;
+
+    font-size: 38px;
+    font-weight: 700;
+}
+
+/* Heading */
+
+.success-card h1 {
+    margin-bottom: 15px;
+
+    font-size: 38px;
+    line-height: 1.2;
+}
+
+/* Text */
+
+.success-card p {
+    max-width: 480px;
+
+    margin: 0 auto 10px;
+
+    line-height: 1.7;
+    font-size: 16px;
+}
+
+/* Button */
+
+.success-card .btn {
+    display: inline-block;
+
+    margin-top: 25px;
+    padding: 14px 28px;
+
+    text-decoration: none;
+
+    border-radius: 10px;
+}
+
+/* Mobile */
+
+@media (max-width: 600px) {
+
+    .testimonial-success {
+        padding: 60px 5%;
+    }
+
+    .success-card {
+        padding: 40px 25px;
+        border-radius: 18px;
+    }
+
+    .success-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 32px;
+    }
+
+    .success-card h1 {
+        font-size: 30px;
+    }
+
+    .success-card p {
+        font-size: 15px;
+    }
+
+}

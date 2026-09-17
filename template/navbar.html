@@ -1,0 +1,15 @@
+<nav class="navbar">
+    <div class="logo">
+        <img  class = "image-logo "src="static/logo.jpeg" alt="logo"> <br> <br>
+        <a href="{% url 'home'%}"> larry`s hub </a>
+    </div>
+    <div class="bar" id="navigation-bar">
+        <a href="/"> home </a>
+        <a href="about"> about me  </a>
+        <a href="{% url 'services' %}">service</a>
+        <a href="{% url 'testimonials' %}">testimonial</a>
+        <a href="{% url 'projects' %}"> project</a>
+        <a href="{% url 'contact' %}">contact </a>
+        <a href="{% url 'contact' %}" class="hire-btn"> Hire Me </a>
+    </div>
+</nav>

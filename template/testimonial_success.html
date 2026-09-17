@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %}Larry's Hub | Thank You{% endblock %}
+
+{% block content %}
+
+<section class="testimonial-success">
+
+    <div class="success-card">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+        <h1>Thank You!</h1>
+
+        <p>
+            Your testimonial has been submitted successfully.
+        </p>
+
+        <p>
+            I will review it before it appears on the website.
+        </p>
+
+        <a href="{% url 'testimonials' %}" class="btn">
+            Back to Testimonials
+        </a>
+
+    </div>
+
+</section>
+
+{% endblock %}

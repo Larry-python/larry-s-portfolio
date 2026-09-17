@@ -1,0 +1,17 @@
+.about-section{
+    padding: 80px 10%;
+}
+.about-content{
+    max-width: 900px;
+    margin: auto;
+}
+.about-content h2{
+    font-size: 40px;
+}
+.about-content h3{
+    font-size: 28px;
+}
+
+.about-content p{
+    line-height: 1.8;
+}

@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block title %}Larry's Hub | Projects{% endblock %}
+
+{% block content %}
+
+<section class="projects-page">
+
+    <div class="section-heading">
+        <p>My Recent Work</p>
+        <h1>Projects</h1>
+        <span>
+            A selection of projects I've built while developing my
+            skills in Python, Django, frontend development and web technologies.
+        </span>
+    </div>
+
+    <div class="projects-container">
+
+        {% for project in projects %}
+
+            <article class="project-card">
+
+                {% if project.image %}
+                    <div class="project-image">
+                        <img
+                            src="{{ project.image.url }}"
+                            alt="{{ project.title }}"
+                        >
+                    </div>
+                {% endif %}
+
+                <div class="project-content">
+
+                    <h2>{{ project.title }}</h2>
+
+                    {% if project.preview %}
+                        <p>
+                            {{ project.preview }}
+                        </p>
+                    {% endif %}
+
+                    <div class="project-buttons">
+
+                        {% if project.link %}
+                            <a
+                                href="{{ project.link }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn"
+                            >
+                                View Project
+                            </a>
+                        {% endif %}
+
+                        {% if project.preview %}
+                            <a
+                                href="{{ project.preview }}"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="btn secondary-btn"
+                            >
+                                Preview
+                            </a>
+                        {% endif %}
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        {% empty %}
+
+            <p class="empty-message">
+                No projects have been added yet.
+            </p>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

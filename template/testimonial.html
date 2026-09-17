@@ -1,0 +1,82 @@
+{% extends 'base.html' %}
+
+{% block title %}Larry's Hub | Testimonials{% endblock %}
+
+{% block content %}
+
+<section class="testimonials-page">
+    
+    <div class="section-heading">
+        <p>What People Say</p>
+        <h1>Testimonials</h1>
+        <span>
+            Feedback from people I've worked with and helped through
+            my development journey.
+        </span>
+    </div>
+    <div class="testimonial-action">
+        <a href="{% url 'leave_testimonial' %}" class="btn">
+            Leave a Testimonial
+        </a>
+    </div>
+
+
+    <div class="testimonials-container">
+
+        {% for testimonial in testimonials %}
+        
+        <article class="testimonial-card">
+            
+                <div class="testimonial-top">
+
+                    {% if testimonial.image %}
+                        <img
+                            src="{{ testimonial.image.url }}"
+                            alt="{{ testimonial.name }}"
+                            class="testimonial-image"
+                        >
+                    {% else %}
+                        <div class="testimonial-avatar">
+                            {{ testimonial.name|first|upper }}
+                        </div>
+                    {% endif %}
+
+                    <div class="testimonial-person">
+                        <h3>{{ testimonial.name }}</h3>
+
+                        {% if testimonial.role %}
+                            <p>{{ testimonial.role }}</p>
+                        {% endif %}
+                    </div>
+
+                </div>
+
+                <div class="testimonial-rating">
+                    {% for i in "12345" %}
+                        {% if forloop.counter <= testimonial.rating %}
+                            ★
+                        {% else %}
+                            ☆
+                        {% endif %}
+                    {% endfor %}
+                </div>
+                
+                <p class="testimonial-message">
+                    "{{ testimonial.message }}"
+                </p>
+
+            </article>
+
+        {% empty %}
+
+            <p class="empty-message">
+                No testimonials have been added yet.
+            </p>
+            
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

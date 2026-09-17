@@ -1,0 +1,64 @@
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    font-family: Arial, Helvetica, sans-serif;
+}
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 8px;
+    background-color: #111;
+    text-transform: capitalize;
+}
+
+.logo a{
+    color: white;
+    text-decoration: none;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.bar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 25px;
+
+}
+.bar a{
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    transition: 0.3s;
+}
+.bar a:hover{
+    color: #00bfff;
+}
+
+.hire-btn{
+    background: #00bfff;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 6px;
+}
+.hire-btn:hover{
+    background: #009acd;
+}
+.image-logo{
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+
+.logo{
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}

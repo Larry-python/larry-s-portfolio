@@ -1,0 +1,100 @@
+{% extends 'base.html' %}
+
+{% block title %}Larry's Hub | Leave a Testimonial{% endblock %}
+
+{% block content %}
+
+<section class="testimonial-form-page">
+
+    <div class="testimonial-form-heading">
+        <p>Share Your Experience</p>
+
+        <h1>Leave a Testimonial</h1>
+
+        <span>
+            I'd love to hear about your experience.
+            Your feedback helps me improve and helps others
+            understand the work I do.
+        </span>
+    </div>
+
+
+    <form
+        method="POST"
+        enctype="multipart/form-data"
+        class="testimonial-form"
+    >
+
+        {% csrf_token %}
+
+        {{ form.non_field_errors }}
+
+        <div class="form-group">
+            <label for="{{ form.name.id_for_label }}">
+                Your Name
+            </label>
+
+            {{ form.name }}
+
+            {{ form.name.errors }}
+        </div>
+
+
+        <div class="form-group">
+            <label for="{{ form.role.id_for_label }}">
+                Your Role
+            </label>
+
+            {{ form.role }}
+
+            {{ form.role.errors }}
+        </div>
+
+
+        <div class="form-group">
+            <label for="{{ form.message.id_for_label }}">
+                Your Testimonial
+            </label>
+
+            {{ form.message }}
+
+            {{ form.message.errors }}
+        </div>
+
+
+        <div class="form-group">
+            <label for="{{ form.rating.id_for_label }}">
+                Rating
+            </label>
+
+            {{ form.rating }}
+
+            {{ form.rating.errors }}
+        </div>
+
+
+        <div class="form-group">
+            <label for="{{ form.image.id_for_label }}">
+                Profile Picture (Optional)
+            </label>
+
+            {{ form.image }}
+
+            {{ form.image.errors }}
+        </div>
+
+
+        <button type="submit" class="btn">
+            Submit Testimonial
+        </button>
+
+        <p class="testimonial-notice">
+            Your testimonial will be reviewed before it appears
+            publicly on the website.
+        </p>
+
+    </form>
+
+</section>
+
+{% endblock %}
